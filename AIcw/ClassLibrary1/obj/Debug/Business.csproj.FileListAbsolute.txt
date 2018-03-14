@@ -1,0 +1,6 @@
+C:\Users\ovidi\Desktop\uni y2\a.i\cw\AIcw\ClassLibrary1\obj\Debug\Business.csprojResolveAssemblyReference.cache
+C:\Users\ovidi\Desktop\uni y2\a.i\cw\AIcw\ClassLibrary1\obj\Debug\Business.csproj.CoreCompileInputs.cache
+C:\Users\ovidi\Desktop\uni y2\a.i\cw\AIcw\ClassLibrary1\bin\Debug\Business.dll
+C:\Users\ovidi\Desktop\uni y2\a.i\cw\AIcw\ClassLibrary1\bin\Debug\Business.pdb
+C:\Users\ovidi\Desktop\uni y2\a.i\cw\AIcw\ClassLibrary1\obj\Debug\Business.dll
+C:\Users\ovidi\Desktop\uni y2\a.i\cw\AIcw\ClassLibrary1\obj\Debug\Business.pdb

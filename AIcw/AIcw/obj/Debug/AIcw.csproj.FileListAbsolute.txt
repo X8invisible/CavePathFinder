@@ -1,0 +1,17 @@
+C:\Users\ovidi\Desktop\uni y2\a.i\cw\AIcw\AIcw\obj\Debug\AIcw.csprojResolveAssemblyReference.cache
+C:\Users\ovidi\Desktop\uni y2\a.i\cw\AIcw\AIcw\obj\Debug\MainWindow.g.cs
+C:\Users\ovidi\Desktop\uni y2\a.i\cw\AIcw\AIcw\obj\Debug\App.g.cs
+C:\Users\ovidi\Desktop\uni y2\a.i\cw\AIcw\AIcw\obj\Debug\AIcw_MarkupCompile.cache
+C:\Users\ovidi\Desktop\uni y2\a.i\cw\AIcw\AIcw\obj\Debug\AIcw_MarkupCompile.lref
+C:\Users\ovidi\Desktop\uni y2\a.i\cw\AIcw\AIcw\bin\Debug\AIcw.exe.config
+C:\Users\ovidi\Desktop\uni y2\a.i\cw\AIcw\AIcw\bin\Debug\AIcw.exe
+C:\Users\ovidi\Desktop\uni y2\a.i\cw\AIcw\AIcw\bin\Debug\AIcw.pdb
+C:\Users\ovidi\Desktop\uni y2\a.i\cw\AIcw\AIcw\obj\Debug\MainWindow.baml
+C:\Users\ovidi\Desktop\uni y2\a.i\cw\AIcw\AIcw\obj\Debug\AIcw.g.resources
+C:\Users\ovidi\Desktop\uni y2\a.i\cw\AIcw\AIcw\obj\Debug\AIcw.Properties.Resources.resources
+C:\Users\ovidi\Desktop\uni y2\a.i\cw\AIcw\AIcw\obj\Debug\AIcw.csproj.GenerateResource.Cache
+C:\Users\ovidi\Desktop\uni y2\a.i\cw\AIcw\AIcw\obj\Debug\AIcw.csproj.CoreCompileInputs.cache
+C:\Users\ovidi\Desktop\uni y2\a.i\cw\AIcw\AIcw\obj\Debug\AIcw.exe
+C:\Users\ovidi\Desktop\uni y2\a.i\cw\AIcw\AIcw\obj\Debug\AIcw.pdb
+C:\Users\ovidi\Desktop\uni y2\a.i\cw\AIcw\AIcw\bin\Debug\Business.dll
+C:\Users\ovidi\Desktop\uni y2\a.i\cw\AIcw\AIcw\bin\Debug\Business.pdb
