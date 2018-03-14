@@ -31,9 +31,9 @@ namespace Business
             { return caves; }
 
         }
-        public bool ReadData()
+        public bool ReadData(string file)
         {
-            string path = @"../../../Data/input2.cav";
+            string path = @file;
             int index = 1;
             if (File.Exists(path))
             {

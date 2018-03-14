@@ -24,9 +24,6 @@ namespace AIcw
         private CavernReader instance = CavernReader.Instance;
         public MainWindow()
         {
-            if (!instance.ReadData())
-                MessageBox.Show("nah");
-            instance.BuildConnections();
             InitializeComponent();
             dgridCave.ItemsSource = instance.Caves;
         }
@@ -42,6 +39,13 @@ namespace AIcw
                 pathS += (nr + " ");
             }
             lblBool.Content = pathS;
+        }
+
+        private void btnArrowBack_Click(object sender, RoutedEventArgs e)
+        {
+            FileSelectWindow back = new FileSelectWindow();
+            back.Show();
+            this.Close();
         }
     }
 }
