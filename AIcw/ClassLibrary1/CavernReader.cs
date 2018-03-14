@@ -10,7 +10,7 @@ namespace Business
     public class CavernReader
     {
         private static CavernReader instance;
-        private static List<Cave> caves = new List<Cave>();
+        private static List<Cave> caves;
         private static Boolean[][] connections;
 
         private CavernReader() { }
@@ -37,6 +37,7 @@ namespace Business
             int index = 1;
             if (File.Exists(path))
             {
+                caves = new List<Cave>();
                 StreamReader readFileStream = new StreamReader(path);
                 string buffer = readFileStream.ReadLine();
                 String[] data = buffer.Split(',');

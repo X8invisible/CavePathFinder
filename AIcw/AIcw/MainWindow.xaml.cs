@@ -22,10 +22,29 @@ namespace AIcw
     public partial class MainWindow : Window
     {
         private CavernReader instance = CavernReader.Instance;
+
+        private void DrawCirle(int x, int y)
+        {
+            double dotSize = 1;
+            Ellipse currentDot = new Ellipse();
+            currentDot.Stroke = new SolidColorBrush(Colors.ForestGreen);
+            currentDot.StrokeThickness = 0.2;
+            Canvas.SetZIndex(currentDot, 3);
+            currentDot.Height = dotSize;
+            currentDot.Width = dotSize;
+            currentDot.Fill = new SolidColorBrush(Colors.Green);
+            currentDot.Margin = new Thickness(x, y, 0, 0); // Sets the position.
+            canvas.Children.Add(currentDot);
+        }
         public MainWindow()
         {
             InitializeComponent();
-            dgridCave.ItemsSource = instance.Caves;
+            foreach(Cave cv in instance.Caves)
+            {
+                DrawCirle(cv.CoordinateX, cv.CoordinateY);
+          
+            }
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -47,5 +66,6 @@ namespace AIcw
             back.Show();
             this.Close();
         }
+
     }
 }
