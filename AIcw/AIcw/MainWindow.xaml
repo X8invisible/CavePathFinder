@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AIcw"
         mc:Ignorable="d"
-        Title="MainWindow" Height="426" Width="569">
+        Title="Path Finder" Height="426" Width="569">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="54*"/>
             <RowDefinition Height="341*"/>
         </Grid.RowDefinitions>
-        <Button x:Name="btnConnection" Content="Find path" HorizontalAlignment="Left" Margin="82,17,0,0" VerticalAlignment="Top" Width="105" Height="24" Click="Button_Click"/>
+        <Button x:Name="btnConnection" Content="Find path" HorizontalAlignment="Left" Margin="82,17,0,0" VerticalAlignment="Top" Width="105" Height="24" Click="BtnConnection_Click"/>
         <Label x:Name="lblBool" Content="" HorizontalAlignment="Left" Margin="309,17,0,0" VerticalAlignment="Top" Width="137" Height="24"/>
 
         <Button x:Name="btnArrowBack" Margin="10,17,0,0" Click="btnArrowBack_Click" HorizontalAlignment="Left" Width="28" Height="24" VerticalAlignment="Top">

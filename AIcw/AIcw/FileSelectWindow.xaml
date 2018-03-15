@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AIcw"
         mc:Ignorable="d"
-        Title="FileSelect" Height="174.901" Width="288">
+        Title="Choose a File" Height="174.901" Width="288">
     <Grid>
         <TextBox x:Name="tboxFile" HorizontalAlignment="Left" TextWrapping="WrapWithOverflow" Text="Path to File" VerticalAlignment="Top" IsReadOnly="True" Margin="10,26,0,0" VerticalContentAlignment="Center" IsUndoEnabled="False" Width="155"/>
         <Button x:Name="btnBrowse" Content="Browse" Margin="195,26,0,0" VerticalAlignment="Top" Height="24" Click="btnBrowse_Click" HorizontalAlignment="Left" Width="75"/>
