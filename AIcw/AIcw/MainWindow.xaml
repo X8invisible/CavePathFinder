@@ -5,14 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AIcw"
         mc:Ignorable="d"
-        Title="Path Finder" Height="426" Width="569">
+        Title="Path Finder" Height="425" Width="569">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="128*"/>
+            <ColumnDefinition Width="59*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="54*"/>
             <RowDefinition Height="341*"/>
         </Grid.RowDefinitions>
         <Button x:Name="btnConnection" Content="Find path" HorizontalAlignment="Left" Margin="82,17,0,0" VerticalAlignment="Top" Width="105" Height="24" Click="BtnConnection_Click"/>
-        <Label x:Name="lblBool" Content="" HorizontalAlignment="Left" Margin="309,17,0,0" VerticalAlignment="Top" Width="137" Height="24"/>
+        <Label x:Name="lblBool" Content="" Margin="228,17,19,0" VerticalAlignment="Top" Height="24"/>
 
         <Button x:Name="btnArrowBack" Margin="10,17,0,0" Click="btnArrowBack_Click" HorizontalAlignment="Left" Width="28" Height="24" VerticalAlignment="Top">
             <Button.Template>
@@ -21,10 +25,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Canvas x:Name="canvas" Margin="10,42,10,99" Grid.Row="1" Height="200" Width="400">
-            <Canvas.LayoutTransform>
-                <ScaleTransform ScaleX="20" ScaleY="20"></ScaleTransform>
-            </Canvas.LayoutTransform>
-        </Canvas>
+        <Canvas x:Name="canvas" Margin="10,10,11,10" Grid.Row="1" Width="540" Height="320" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblDist" Content="" Margin="30,17,11,0" VerticalAlignment="Top" Height="24" Grid.Column="1"/>
     </Grid>
 </Window>
