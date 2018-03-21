@@ -154,6 +154,7 @@ namespace Business
                 nodes.Remove(smallest);
                 if(smallest == finish)
                 {
+
                     Cave node = this.GetCave(smallest);
                     while(node != null)
                     {
@@ -161,7 +162,6 @@ namespace Business
                         node = node.Previous;
                     }
                     break;
-                   // path.Add(1);
                 }
                 if (distances[smallest] == int.MaxValue)
                 {
@@ -181,6 +181,8 @@ namespace Business
 
             return path;
         }
-       
+
+        
+
     }
 }

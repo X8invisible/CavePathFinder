@@ -43,6 +43,7 @@
     <Compile Include="Cave.cs" />
     <Compile Include="CavernReader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StepThrough.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
