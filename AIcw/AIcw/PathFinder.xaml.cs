@@ -138,11 +138,11 @@ namespace AIcw
                 if(path.Last<int>() == 8080)
                 {
                     path.Remove(8080);
-                    DrawPath(path,Brushes.LightSteelBlue);
+                    DrawPath(path,Brushes.Blue);
                 }
                 else
                 {
-                    DrawPath(path, Brushes.DarkRed);
+                    DrawPath(path, Brushes.Gold);
                 }  
             }
             dGridDist.Items.Refresh();
