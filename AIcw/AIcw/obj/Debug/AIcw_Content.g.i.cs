@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("2018-03-20.ico")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("ic_launcher.ico")]
 
 

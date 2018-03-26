@@ -16,16 +16,20 @@ using System.Windows.Shapes;
 
 namespace AIcw
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+    /* 
+     * Author: Ovidiu - Andrei Radulescu
+     * The Path Finder window, contains drawing of lines, circles and paths functions
+     * Last edited: 26/03/2018
+     */
     public partial class MainWindow : Window
     {
         private CavernReader instance = CavernReader.Instance;
         private StepThrough stepThrough = new StepThrough();
         private List<Cave> unpop;
+        //needed for scaling the canvas
         private int maxX = 0;
         private int maxY = 0;
+        //method for drawing a circle
         private void DrawCirle(int x, int y, int nr)
         {
             TextBlock TB = new TextBlock();
@@ -48,6 +52,7 @@ namespace AIcw
             currentDot.Margin = new Thickness(x, y, x+0.5, y+0.5); // Sets the position.
             canvas.Children.Add(currentDot);
         }
+        //method for drawing a line
         private void DrawLine(int x1, int y1, int x2, int y2, Brush colour)
         {
             Line line = new Line();
@@ -62,6 +67,7 @@ namespace AIcw
             canvas.Children.Add(line);
         }
 
+        //method for drawing a path(multiple lines)
         private void DrawPath(List<int> path, Brush colour)
         {
             double distance = 0;
@@ -86,6 +92,7 @@ namespace AIcw
             InitializeComponent();
             unpop = new List<Cave>(instance.Caves);
             dGridDist.ItemsSource = stepThrough.Distances;
+            //gets the max X coordinate and Y coordinate from the map, in order to scale the canvas
             foreach (Cave cv in instance.Caves)
             {
                 
@@ -94,6 +101,7 @@ namespace AIcw
                 if (cv.CoordinateY > maxY)
                     maxY = cv.CoordinateY;
             }
+            //adds each cave as a point
             foreach(Cave cv in instance.Caves)
             {
                 DrawCirle(cv.CoordinateX, maxY-cv.CoordinateY, cv.Number);
@@ -103,6 +111,7 @@ namespace AIcw
 
         }
 
+        //shortest path through the caves(no stepping)
         private void BtnConnection_Click(object sender, RoutedEventArgs e)
         {
             unpop = new List<Cave>(instance.Caves);
@@ -110,6 +119,7 @@ namespace AIcw
             DrawPath(path, Brushes.RoyalBlue);
         }
 
+        //previous window
         private void btnArrowBack_Click(object sender, RoutedEventArgs e)
         {
             FileSelectWindow back = new FileSelectWindow();
@@ -117,10 +127,12 @@ namespace AIcw
             this.Close();
         }
 
+        //clear canvas
         private void btnClear_Click(object sender, RoutedEventArgs e)
         {
             stepThrough = new StepThrough();
-            dGridDist.Items.Refresh();
+            instance.Reset();
+            dGridDist.ItemsSource = stepThrough.Distances;
             canvas.Children.Clear();
             lblDist.Content = "";
             lblPath.Content = "";
@@ -129,12 +141,13 @@ namespace AIcw
                 DrawCirle(cv.CoordinateX, maxY - cv.CoordinateY, cv.Number);
             }
         }
-
+        //step through pathing
         private void btnStep_Click(object sender, RoutedEventArgs e)
         {
             List<int> path = stepThrough.Step(unpop);
             if(path.Count > 0)
             {
+                //this is a flag for letting the program know it reached the final node(and therefore it needs to draw a path with different colours)
                 if(path.Last<int>() == 8080)
                 {
                     path.Remove(8080);
@@ -145,6 +158,7 @@ namespace AIcw
                     DrawPath(path, Brushes.Gold);
                 }  
             }
+            //refreshes the distances table with updated values after a step through
             dGridDist.Items.Refresh();
             
         }

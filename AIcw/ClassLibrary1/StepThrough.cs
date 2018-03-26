@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace Business
 {
-   public class StepThrough
+    /* 
+    * Author: Ovidiu - Andrei Radulescu
+    * The Step Through class
+    * Last edited: 26/03/2018
+    */
+
+    //does the same thing as the Path() function from cavern reader, but it's a class because I need a lot of the variables returned to the program
+    //Also needed is remembering the node positions and distances for stepping through, a function would lose that and do it from the beggining
+    public class StepThrough
     {
         
         private Dictionary<int, double> distances = new Dictionary<int, double>();
@@ -23,6 +31,7 @@ namespace Business
             get { return distances; }
         }
 
+        //does the same thing as Path(), but the function ends after one loop through a cave's neighbours
         public List<int> Step(List<Cave> unpopulated)
         {
             int start = 1;
@@ -60,6 +69,7 @@ namespace Business
                         path.Add(node.Number);
                         node = node.Previous;
                     }
+                    //flag for the program to know the path has been found
                     path.Add(8080);
                     break;
                 }

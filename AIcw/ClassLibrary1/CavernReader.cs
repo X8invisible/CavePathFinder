@@ -7,6 +7,11 @@ using System.Threading.Tasks;
 
 namespace Business
 {
+    /* 
+    * Author: Ovidiu - Andrei Radulescu
+    * The Cavern Reader class, contains the input file reader as well as the Dijkstra's algorithm for finding a path directly(no step through)
+    * Last edited: 26/03/2018
+    */
     public class CavernReader
     {
         private static CavernReader instance;
@@ -31,6 +36,15 @@ namespace Business
             { return caves; }
 
         }
+        //used for the clear canvas function
+        public void Reset()
+        {
+            foreach(Cave cv in caves)
+            {
+                cv.Previous = null;
+            }
+        }
+        //code supplied by the module for reading the .cav files(updated for c#)
         public bool ReadData(string file)
         {
             string path = @file;
@@ -109,6 +123,7 @@ namespace Business
             
             return Math.Sqrt(result);
         }
+        //adds the list of neighbour caves to a cave
         public void BuildConnections()
         {
             foreach (Cave caveFrom in caves)
@@ -127,13 +142,20 @@ namespace Business
           
         }
 
+        //dijkstra's algorithm for finding shortest path(no step through)
         public List<int> Path(List<Cave> unpopulated)
         {
+            //always starts at 1
             int start = 1;
+            //last cave number
             int finish = unpopulated.Count;
+            //list of cave number and the distance to cave 1
             Dictionary<int, double> distances = new Dictionary<int, double>();
+            //the list of unvisited caves
             List<int> nodes = new List<int>();
+            //path to return
             List<int> path = new List<int>(); 
+            //adds the distances
             foreach (Cave cv in unpopulated)
             {
                 if(cv.Number == start)
@@ -146,12 +168,15 @@ namespace Business
                 }
                nodes.Add(cv.Number);
             }
-            
+            //loop as long as there are unvisited caves
             while(nodes.Count != 0)
             {
+                //sorts the unvisited list by the shortest distance to cave 1
                 nodes.Sort((pair1, pair2) => distances[pair1].CompareTo(distances[pair2]));
+                //gets the closest cave and removes it from unvisited
                 int smallest = nodes[0];
                 nodes.Remove(smallest);
+                //if it's the last cave, return the path
                 if(smallest == finish)
                 {
 
@@ -163,14 +188,18 @@ namespace Business
                     }
                     break;
                 }
+                //if the unvisited list returns a cave with a max int value, it means there is no solution(cave isn't connected so no valid path)
                 if (distances[smallest] == int.MaxValue)
                 {
                     break;
                 }
                 Cave caveSmallest = this.GetCave(smallest);
+                //looks through the caves neighbours and calculates distances 
                 foreach(var neighbour in caveSmallest.Neighbours)
                 {
+                    //potential new distance from neighbour to cave 1
                     double alt = distances[smallest] + neighbour.Value;
+                    //if the new distance is shorter, update the distance and the cave's previous link
                     if(alt < distances[neighbour.Key])
                     {
                         distances[neighbour.Key] = alt;

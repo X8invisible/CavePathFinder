@@ -30,6 +30,11 @@
         <Label x:Name="lblDist" Content="" Margin="272,19,10,0" Grid.Row="2" Height="24" VerticalAlignment="Top" />
         <Button x:Name="btnStep" Content="Step Through" HorizontalAlignment="Left" Margin="249,17,0,0" VerticalAlignment="Top" Width="105" Height="24" Click="btnStep_Click"/>
         <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="425,17,0,0" VerticalAlignment="Top" Width="105" Height="24" Click="btnClear_Click"/>
-        <DataGrid x:Name="dGridDist" Grid.Column="1" Height="316" Margin="10,10,22,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <DataGrid x:Name="dGridDist" Grid.Column="1" Height="316" Margin="10,10,22,0" Grid.Row="1" VerticalAlignment="Top" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Cave No." Binding="{Binding Key}" Width="100"/>
+                <DataGridTextColumn Header="Distance to Cave 1" Binding="{Binding Value}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>

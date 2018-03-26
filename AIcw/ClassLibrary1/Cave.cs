@@ -6,11 +6,18 @@ using System.Threading.Tasks;
 
 namespace Business
 {
+    /* 
+    * Author: Ovidiu - Andrei Radulescu
+    * The Cave class
+    * Last edited: 26/03/2018
+    */
     public class Cave
     {
         private int number;
+        // X and Y coordinates
         private int x;
         private int y;
+        //stores the node reference to the previous cave in the path to the first cave
         private Cave previous = null;
         private Dictionary<int, double> neighbours = new Dictionary<int, double>();
 
